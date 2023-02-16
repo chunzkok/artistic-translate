@@ -11,7 +11,8 @@ defineProps({
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
     <h3>
-      Please enjoy the artwork on the left, from the Art Institute of Chicago.
+      Please enjoy this wonderful piece of artwork, from the Art Institute of
+      Chicago.
     </h3>
   </div>
 </template>
@@ -35,7 +36,7 @@ h3 {
 @media (min-width: 1024px) {
   .greetings h1,
   .greetings h3 {
-    text-align: left;
+    text-align: center;
   }
 }
 </style>
