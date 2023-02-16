@@ -1,29 +1,11 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import { ref, onMounted } from "vue";
-import getRandPublicImgUrl from "./services/ArticApi";
-
-const artic_image_url = ref(null);
-
-onMounted(() => {
-  getRandPublicImgUrl().then((x) => (artic_image_url.value = x));
-});
+import RandomArtwork from "./components/RandomArtwork.vue";
 </script>
 
 <template>
   <header>
-    <img
-      v-if="artic_image_url" 
-      alt="Artwork by the Art Institute of Chicago"
-      class="artwork my-5"
-      :src="artic_image_url"
-      width="250"
-      height="250"
-    />
-    <div v-else class="spinner-border" role="status"> 
-      <span class="sr-only">Loading...</span>
-    </div>
-
+    <RandomArtwork />
     <div class="wrapper">
       <div class="greetings">
         <h1 class="green">Welcome!</h1>
@@ -64,12 +46,6 @@ header {
 .greetings h3 {
   text-align: center;
 }
-.artwork {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 nav {
   width: 100%;
   font-size: 12px;
@@ -93,10 +69,6 @@ nav a {
 
 nav a:first-of-type {
   border: 0;
-}
-
-.sr-only {
-  display: none;
 }
 
 @media (min-width: 1024px) {
