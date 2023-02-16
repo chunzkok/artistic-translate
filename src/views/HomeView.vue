@@ -1,9 +1,9 @@
 <script setup>
-import TheWelcome from "../components/TheWelcome.vue";
+import TranslatorSegment from '../components/TranslatorSegment.vue';
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <TranslatorSegment />
   </main>
 </template>
