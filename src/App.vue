@@ -1,17 +1,29 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "./components/HelloWorld.vue";
+import { ref, onMounted } from "vue";
+import getRandPublicImgUrl from "./services/ArticApi";
+
+const artic_image_url = ref(null);
+
+onMounted(() => {
+  getRandPublicImgUrl().then((x) => (artic_image_url.value = x));
+});
 </script>
 
 <template>
   <header>
     <img
-      alt="Vue logo"
-      class="logo my-5"
-      src="@/assets/logo.svg"
+      v-if="artic_image_url" 
+      alt="Artwork by the Art Institute of Chicago"
+      class="artwork my-5"
+      :src="artic_image_url"
       width="250"
       height="250"
     />
+    <div v-else class="spinner-border" role="status"> 
+      <span class="sr-only">Loading...</span>
+    </div>
 
     <div class="wrapper">
       <HelloWorld msg="Welcome!" />
@@ -34,7 +46,7 @@ header {
   flex-direction: column;
 }
 
-.logo {
+.artwork {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -63,6 +75,10 @@ nav a {
 
 nav a:first-of-type {
   border: 0;
+}
+
+.sr-only {
+  display: none;
 }
 
 @media (min-width: 1024px) {
