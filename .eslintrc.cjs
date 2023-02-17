@@ -12,6 +12,14 @@ module.exports = {
     ecmaVersion: "latest",
   },
   env: {
-    "jest": true
-  }
+    jest: true,
+  },
+  rules: {
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto",
+      },
+    ],
+  },
 };

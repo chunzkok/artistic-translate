@@ -10,18 +10,17 @@ onMounted(() => {
 </script>
 
 <template>
-    <img
-      v-if="artic_image_url" 
-      alt="Artwork by the Art Institute of Chicago"
-      class="artwork my-5"
-      :src="artic_image_url"
-      width="250"
-      height="250"
-    />
-    <div v-else class="spinner-border" role="status"> 
-      <span class="sr-only">Loading...</span>
-    </div>
-
+  <img
+    v-if="artic_image_url"
+    alt="Artwork by the Art Institute of Chicago"
+    class="artwork my-5"
+    :src="artic_image_url"
+    width="250"
+    height="250"
+  />
+  <div v-else class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
 </template>
 
 <style scoped>
