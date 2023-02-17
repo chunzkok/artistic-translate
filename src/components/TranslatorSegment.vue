@@ -1,7 +1,7 @@
 <template>
-    <div class="placeholderText d-flex ">
+  <div class="placeholderText d-flex">
     <h1>WIP: LibreTranslate API integration</h1>
-    </div>
+  </div>
 </template>
 
 <style scoped>

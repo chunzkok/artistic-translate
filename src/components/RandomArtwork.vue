@@ -18,9 +18,6 @@ onMounted(() => {
     width="250"
     height="250"
   />
-  <div v-else class="spinner-border" role="status">
-    <span class="sr-only">Loading...</span>
-  </div>
 </template>
 
 <style scoped>
