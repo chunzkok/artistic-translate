@@ -5,7 +5,7 @@ import RandomArtwork from "./components/RandomArtwork.vue";
 
 <template>
   <header>
-    <RandomArtwork />
+    <RandomArtwork class="my-5" />
     <div class="wrapper">
       <div class="greetings">
         <h1 class="green">Welcome!</h1>

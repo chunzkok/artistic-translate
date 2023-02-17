@@ -13,11 +13,12 @@ onMounted(() => {
   <img
     v-if="artic_image_url"
     alt="Artwork by the Art Institute of Chicago"
-    class="artwork my-5"
+    class="artwork"
     :src="artic_image_url"
     width="250"
     height="250"
   />
+  <div v-else class="loading-skeleton placeholder rounded-3"></div>
 </template>
 
 <style scoped>
@@ -26,8 +27,18 @@ onMounted(() => {
   margin-left: auto;
   margin-right: auto;
 }
-
-.sr-only {
-  display: none;
+@keyframes loading-skeleton {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 0.3;
+  }
+}
+.loading-skeleton {
+  pointer-events: none;
+  animation: loading-skeleton 1s infinite alternate;
+  width: 250px;
+  height: 250px;
 }
 </style>
